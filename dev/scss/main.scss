@@ -1,3 +1,6 @@
+@import "./about.scss";
+@import "./contact.scss";
+@import "./schedule.scss";
 body{
     font-family: 'Cinzel', serif;
     // font-family: 'Darker Grotesque', sans-serif;
@@ -8,14 +11,31 @@ body{
 nav{
     position: fixed;
     top: 0;
-    border-bottom: 1px solid white;
-    background-color: transparent;
+
     z-index: 10;
     color: white;
     width: 100%;
+    .container{
+        border-bottom: 1px solid white;
+        background-color: transparent;
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        align-items: center;
+        
+    }
     
     span{
         cursor: pointer;
+        font-size: 1.2rem;
+    }
+    .menu{
+        display: flex;
+        justify-content: space-around;
+        span{
+            margin: 1rem;
+            
+        }
     }
 }
 .billboard{
@@ -30,15 +50,38 @@ nav{
     background-size: cover;
     color: white;
     height: 100vh;
+
     .container{
         text-align: center;
+        animation: moveUp 1s ease-out ;
+
         h1{
             font-size: 3rem;
             letter-spacing: 1.6rem;
             margin-right: -1.6rem;
         }
+
         h6{
             font-size: 1rem;
         }
     }
+
 }
+
+@keyframes moveUp {
+    0% {
+        filter: blur(.3rem);
+        transform: translateY(75px);
+        line-height: 100px;
+        opacity: 0;
+    }
+
+    100% {
+        filter: blur(0);
+        transform: translate(0);
+        line-height: 77px;
+        opacity: 1;
+    }
+
+  }
+
