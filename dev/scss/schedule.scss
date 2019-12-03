@@ -1,0 +1,76 @@
+.schedule {
+    
+    .billboard{
+        background-image: linear-gradient(rgba(0, 0, 0,.5)), url('../../public/images/IMG_3170_edited.jpg');
+        .container{
+            height: 100vh;
+            color: white;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            .row{
+                width: 400px;
+
+                h1{
+                    font-size: 3rem;
+                    letter-spacing: 1rem;
+                    margin-right: -1rem;
+                    @include media-breakpoint-up(lg){
+                        letter-spacing: 1.6rem;
+                    margin-right: -1.6rem;
+
+                    }
+                }
+        
+                h6{
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .arrow {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            margin-left: -20px;
+            width: 40px;
+            height: 60px;
+            /*change with size of arrow to make sit on bottom */
+            /*   background-image: url(); */
+            /*   background-size: contain; */
+        }
+    
+        .bounce {
+            -moz-animation: bounce 2s infinite;
+            -webkit-animation: bounce 2s infinite;
+            animation: bounce 2s infinite;
+        }
+    }
+
+
+
+
+    @keyframes bounce {
+
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+            transform: translateY(0);
+        }
+
+        40% {
+            transform: translateY(-30px);
+        }
+
+        60% {
+            transform: translateY(-15px);
+        }
+    }
+
+
+}
