@@ -1,7 +1,9 @@
 .schedule {
     
     .billboard{
-        background-image: linear-gradient(rgba(0, 0, 0,.5)), url('../../public/images/IMG_3170_edited.jpg');
+        background-image: linear-gradient(rgba(0, 0, 0,.3)), url('../../public/images/IMG_3170_edited.jpg');
+        background-position: center;
+        background-size: cover;
 
         .container{
             height: 100vh;
