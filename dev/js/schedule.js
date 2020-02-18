@@ -3,3 +3,8 @@ $(window).scroll(function(){
   //250 is fade pixels
   });
 
+
+  new fullpage('#schedule', {
+    //options here
+    autoScrolling:true,
+  });

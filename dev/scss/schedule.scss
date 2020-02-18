@@ -1,52 +1,214 @@
-.schedule {
-    
-    .billboard{
-        background-image: linear-gradient(rgba(0, 0, 0,.3)), url('../../public/images/IMG_3170_edited.jpg');
+#schedule {
+
+    .billboard {
+        background-image: linear-gradient(rgba(0, 0, 0, .3)), url('../../public/images/IMG_3172.jpg');
         background-position: center;
         background-size: cover;
 
-        .container{
+        .container {
             height: 100vh;
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            .row{
+
+            .row {
                 width: 400px;
 
-                h1{
-                    font-size: 3rem;
+                h1 {
+                    font-size: 2.5rem;
                     letter-spacing: 1rem;
                     margin-right: -1rem;
-                    @include media-breakpoint-up(lg){
+
+                    @include media-breakpoint-up(lg) {
                         letter-spacing: 1.6rem;
                         margin-right: -1.6rem;
+                        font-size: 4rem;
                     }
                 }
-        
-                h6{
+
+                h6 {
                     font-size: 1rem;
                 }
             }
         }
 
+        .image-wrapper {
+            z-index: 1;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+            width: 100%;
+            height: 102%;
+            display: flex;
+
+            img {
+                margin: auto;
+                max-width: 300px;
+
+                @include media-breakpoint-up(lg) {
+                    max-width: 500px;
+                }
+            }
+
+        }
+
         .arrow {
             position: absolute;
-            bottom: 0;
+            bottom: 1rem;
             left: 50%;
             margin-left: -20px;
-            width: 40px;
-            height: 60px;
-            /*change with size of arrow to make sit on bottom */
-            /*   background-image: url(); */
-            /*   background-size: contain; */
+            width: 30px;
+            height: 30px;
         }
-    
+
         .bounce {
             animation: bounce 2s infinite;
         }
 
+    }
+
+    .scheduleArea {
+
+        height: 100vh;
+        min-height: 500px;
+        background-color: #000;
+        color: white;
+        display: flex;
+            justify-content: center;
+            align-items: center;
+
+        h2 {
+            width: 100%;
+            
+            text-align: center;
+            margin: 0rem auto 1rem;
+            font-size: 4rem;
+
+            @include media-breakpoint-up(lg) {
+                margin: 0rem auto 1rem;
+                font-size: 6rem;
+            }
+        }
+        .col-12{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            p{
+                margin-bottom: 2rem;
+                text-align: center;
+                width: 100%;
+                @include media-breakpoint-up(md) {
+                width: 500px;
+                }
+                @include media-breakpoint-up(lg) {
+                width: 600px;
+                }
+            }
+        }
+
+        .col-12:last-of-type{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #Setmore_button_iframe {
+
+            /*--Button Styles--*/
+            padding: 1.2rem 2.5rem;
+            border: 2px solid #ffffff;
+            border-radius: 0rem;
+            color: #ffffff;
+            font-size: 0.6875rem;
+            font-weight: 700;
+            letter-spacing: 0.3rem;
+            position: relative;
+
+            transition: all 1000ms cubic-bezier(0.890, -0.170, 0.140, 1.225);
+            /* custom */
+
+            transition-timing-function: cubic-bezier(0.890, -0.170, 0.140, 1.225);
+            /* custom */
+
+
+            & .top {
+                position: relative;
+                height: 6px;
+                overflow: hidden;
+                top: 0;
+                transition: all 300ms cubic-bezier(1.000, -0.055, 0.025, 1.040);
+                /* custom */
+
+
+                transition-timing-function: cubic-bezier(1.000, -0.055, 0.025, 1.040);
+                /* custom */
+
+
+                transition-delay: 0.35s;
+            }
+
+            & .bottom {
+                position: relative;
+                height: 6px;
+                overflow: hidden;
+                bottom: 0;
+
+
+                transition: all 300ms cubic-bezier(1.000, -0.055, 0.025, 1.040);
+                /* custom */
+
+                transition-timing-function: cubic-bezier(1.000, -0.055, 0.025, 1.040);
+                /* custom */
+
+                transition-delay: 0.35s;
+            }
+
+            & .bottom span {
+                top: -6px;
+                position: absolute;
+                left: 0;
+            }
+
+            &:hover .top {
+                top: -5px;
+
+                transition-delay: 0.35s;
+            }
+
+            &:hover .bottom {
+                bottom: -5px;
+
+                transition-delay: 0.35s;
+            }
+
+            &:hover,
+            &:focus,
+            &:active {
+                margin-left: 10px;
+            }
+
+            &:before {
+                content: '';
+                height: 1px;
+                width: 60px;
+                background-color: #ffffff;
+                position: absolute;
+                margin-top: 6px;
+                right: -35px;
+
+                transition: all 1000ms cubic-bezier(0.890, -0.170, 0.140, 1.225);
+                /* custom */
+
+
+
+                transition-timing-function: cubic-bezier(0.890, -0.170, 0.140, 1.225);
+                /* custom */
+            }
+
+            &:hover:before {
+                width: 130%;
+            }
+
+        }
     }
 
     @keyframes bounce {

@@ -6,12 +6,14 @@
 @import "./schedule.scss";
 
 body {
-    font-family: 'Cinzel', serif;
+    background-color: #000;
+    // font-family: 'Cinzel', serif;
+    font-family: 'Bebas Neue', cursive;
     // font-family: 'Darker Grotesque', sans-serif;
     // font-family: 'Alegreya Sans SC', sans-serif;
     // font-family: 'Assistant', sans-serif;
     .navDesk {
-        position: fixed;
+        position: absolute;
         top: 0;
     
         z-index: 10;
@@ -36,11 +38,18 @@ body {
         .menu {
             display: flex;
             justify-content: space-around;
+            height: 100%;
     
             span {
                 margin: 1rem;
+                margin: auto;
+                padding: 1.2rem;
+                padding-top: 1.9rem;
+                &.active{
+                    border-bottom: 3px solid white;
+                }
     
-            }
+            } 
         }
     }
     
@@ -52,12 +61,13 @@ body {
         left: 0;
         a {
             text-decoration: none;
-            color: #1E1E23;
+            color: #fff;
             opacity: 1;
             font-family: 'work sans', sans serif;
             font-size: 1.5em;
             font-weight: 400;
             transition: 200ms;
+            pointer-events: all;
     
             &:hover {
                 opacity: 0.5;
@@ -131,12 +141,14 @@ body {
         #menu {
             position: absolute;
             width: 80vw;
-            height: 100vh;
+            height: 101vh;
             box-shadow: 0 0 10px #85888C;
             margin: -30px 0 0 -50px;
             padding: 50px;
             padding-top: 125px;
-            background-color: #F5F6FA;
+            backdrop-filter: blur(10);
+            background-color: rgba(0, 0, 0, .8);
+            color: white;
             -webkit-font-smoothing: antialiased;
             transform-origin: 0% 0%;
             transform: translate(-100%, 0);
@@ -147,6 +159,31 @@ body {
                 transition-delay: 2s;
             }
         } 
+    }
+    .image-wrapper {
+        z-index: 1;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .8));
+        width: 100%;
+        height: 102%;
+        display: flex;
+
+        img {
+            margin: auto;
+            max-width: 300px;
+
+            @include media-breakpoint-up(lg) {
+                max-width: 500px;
+            }
+        }
+
+    }
+
+    .arrow{
+        bottom: 1rem;
+        .fa-5x{
+
+            font-size: 3em;
+        }
     }
 
     .billboard{
@@ -163,17 +200,22 @@ body {
                 width: 400px;
 
                 h1{
-                    font-size: 3rem;
-                    letter-spacing: 1rem;
+                    font-size: 2.5rem;
+                    letter-spacing: 12px;
                     margin-right: -1rem;
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
                     @include media-breakpoint-up(lg){
-                        letter-spacing: 1.6rem;
-                        margin-right: -1.6rem;
+                        font-size: 4rem;
                     }
+
                 }
+
         
                 h6{
                     font-size: 1rem;
+                    opacity: .6;
                 }
             }
         }
